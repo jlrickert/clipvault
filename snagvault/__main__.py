@@ -26,6 +26,10 @@ def copy_key(key, timeout=5):
 
 def set_key(key, value):
     vault[key] = value
+    text = colored(
+        'Value for {} has been set!'.format(key),
+        'green')
+    cprint(text)
 
 
 def main() -> None:
