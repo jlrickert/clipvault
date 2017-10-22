@@ -8,7 +8,7 @@ class __Vault(object):
         pass
 
     def __init__(self):
-        self.service = 'Snag Vault'
+        self.service = 'Clip Vault'
 
     def __setitem__(self, key, item):
         self.set_password(key, item)

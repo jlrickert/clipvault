@@ -1,7 +1,5 @@
-SnagVault
-===========
+Clip Vault
+==========
 
 Known Bugs
 =============
-
-- installer doesn't install snag correctly
