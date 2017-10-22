@@ -1,7 +1,6 @@
-import os
-import sys
+import pyperclip
+from termcolor import colored, cprint
 
-from ..vault import vault as vault_
 from .cli import AbstractCli
 
 
@@ -10,12 +9,17 @@ class VaultCli(AbstractCli):
     """
     name = 'vault'
 
+    def command(self, args):
+        key = args.key
+        value = pyperclip.paste()
+        self.vault[key] = value
+        text = colored(
+            'Value for {} has been set!'.format(key),
+            'green')
+        cprint(text)
 
-def vault():
-    args = sys.argv
-    cli = VaultCli(args, vault_)
-    return cli.run()
-
-
-if __name__ == '__main__':
-    os.exit(vault())
+    def _setup_parser(self, parser):
+        parser.add_argument(
+            'key',
+            type=str,
+            help='Key to store contents of clipboard into')
