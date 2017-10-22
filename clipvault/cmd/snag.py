@@ -37,8 +37,10 @@ class SnagCli(AbstractCli):
         if key is None:
             key = pyperclip.paste()
         try:
-            uri = parse(key)
-            key = uri['authority']
+            tmp_key = key
+            uri = parse(tmp_key)
+            if uri['authority'] is not None:
+                key = uri['authority']
         except ValueError:
             pass
         return key
