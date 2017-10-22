@@ -29,7 +29,6 @@ setup(
     url='https://github.com/jlrickert/snagvault/',
     include_package_data=True,
     packages=find_packages('snagvault'),
-    package_dir={'': 'snagvault'},
     setup_requires=['pytest-runner'],
     install_requires=[
         'keyring==10.4.0',

@@ -9,6 +9,8 @@ name = "pypi"
 
 keyring = "*"
 secretstorage = "*"
+pyperclip = "*"
+termcolor = "*"
 
 
 [dev-packages]
