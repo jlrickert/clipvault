@@ -24,6 +24,7 @@ class SnagCli(AbstractCli):
     def command(self, args):
         key = self.__process_key(args.key)
         value, text = self.__fetch_value(key)
+        self.vault.set_password(key, value)
         pyperclip.copy(value)
         cprint(text)
 
