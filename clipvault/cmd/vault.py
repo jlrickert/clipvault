@@ -6,6 +6,7 @@ from .cli import AbstractCli
 
 class VaultCli(AbstractCli):
     """Vault description
+
     """
     name = 'vault'
 

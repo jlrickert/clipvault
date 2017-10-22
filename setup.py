@@ -33,8 +33,9 @@ setup(
     setup_requires=['pytest-runner'],
     install_requires=[
         'keyring==10.4.0',
-        'secretstorage==2.3.1',
-    ],
+        'pyperclip==1.5.27',
+        'rfc3987==1.3.7',
+    ] + (['secretstorage==2.3.1'] if "linux" in sys.platform else []),
     entry_points={
         'console_scripts': [
             'snag = clipvault.cmd:snag',
